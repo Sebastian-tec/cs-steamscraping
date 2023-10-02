@@ -193,6 +193,7 @@ internal static class Helper
     public static bool IsError(XmlDocument xml) => xml.InnerText.Contains(ErrorGroupInfo);
     public static bool IsValidPage(XmlDocument xml) => !IsRemoved(xml) && !IsNotFound(xml) && !IsError(xml);
 
+    // Dette fejler hvis gruppen er blevet oprettet den 20. i en måned
     public static bool HasYear(string date) => date.Contains("20");
     public static string AddYear(string date) => !HasYear(date) ? date + DateTime.Now.Year : date;
 
