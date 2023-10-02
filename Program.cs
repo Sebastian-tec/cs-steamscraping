@@ -1,7 +1,4 @@
-﻿using cssteamscraping;
-using static System.Net.Mime.MediaTypeNames;
-
-namespace MyNamespace
+﻿namespace MyNamespace
 {
     internal class Program
     {

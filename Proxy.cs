@@ -1,11 +1,4 @@
-﻿using RestSharp;
-using System;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
-
-namespace cssteamscraping
+﻿namespace cssteamscraping
 {
     public class Proxy
     {
