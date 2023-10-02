@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using HtmlAgilityPack;
+using System.Xml;
 
 namespace cssteamscraping;
 
@@ -188,10 +189,10 @@ internal static class Helper
     public static bool IsValidGid(int gid) => gid > 5 && gid != null;
 
 
-    public static bool IsRemoved(XmlDocument xml) => xml.InnerText.Contains(ErrorRemoved);
-    public static bool IsNotFound(XmlDocument xml) => xml.InnerText.Contains(ErrorUrl);
-    public static bool IsError(XmlDocument xml) => xml.InnerText.Contains(ErrorGroupInfo);
-    public static bool IsValidPage(XmlDocument xml) => !IsRemoved(xml) && !IsNotFound(xml) && !IsError(xml);
+    public static bool IsRemoved(HtmlNode xml) => xml.InnerText.Contains(ErrorRemoved);
+    public static bool IsNotFound(HtmlNode xml) => xml.InnerText.Contains(ErrorUrl);
+    public static bool IsError(HtmlNode xml) => xml.InnerText.Contains(ErrorGroupInfo);
+    public static bool IsValidPage(HtmlNode xml) => !IsRemoved(xml) && !IsNotFound(xml) && !IsError(xml);
 
     // Dette fejler hvis gruppen er blevet oprettet den 20. i en måned
     public static bool HasYear(string date) => date.Contains("20");
@@ -201,13 +202,13 @@ internal static class Helper
 
 internal static class PageInfo
 {
-    public static string GetXmlGroupName(XmlDocument doc) => doc.SelectSingleNode("//groupName").InnerText;
-    public static string GetXmlGroupUrl(XmlDocument doc) => doc.SelectSingleNode("//groupURL").InnerText;
-    public static string GetXmlGroupAvatar(XmlDocument doc) => doc.SelectSingleNode("//avatarFull").InnerText;
-    public static string GetXmlGroupMemberCount(XmlDocument doc) => doc.SelectSingleNode("//memberCount").InnerText;
-    public static string GetXmlGroupId(XmlDocument doc) => doc.SelectSingleNode("//groupID64").InnerText;
-    public static string GetXmlGroupOwner(XmlDocument doc) => doc.SelectSingleNode("//members/steamID64").InnerText;
+    public static string GetXmlGroupName(HtmlNode doc) => doc.SelectSingleNode("//groupName").InnerText;
+    public static string GetXmlGroupUrl(HtmlNode doc) => doc.SelectSingleNode("//groupURL").InnerText;
+    public static string GetXmlGroupAvatar(HtmlNode doc) => doc.SelectSingleNode("//avatarFull").InnerText;
+    public static string GetXmlGroupMemberCount(HtmlNode doc) => doc.SelectSingleNode("//memberCount").InnerText;
+    public static string GetXmlGroupId(HtmlNode doc) => doc.SelectSingleNode("//groupID64").InnerText;
+    public static string GetXmlGroupOwner(HtmlNode doc) => doc.SelectSingleNode("//members/steamID64").InnerText;
 
-    public static string GetGroupAbbrevation(XmlDocument doc) => doc.SelectSingleNode("//span[@class='grouppage_header_abbrev'").InnerText;
-    public static string GetGroupCreationDate(XmlDocument doc) => doc.SelectSingleNode("//div[@class='groupstat']/div[@class='data']").InnerText;
+    public static string GetGroupAbbrevation(HtmlNode doc) => doc.SelectSingleNode("//span[@class='grouppage_header_abbrev'").InnerText;
+    public static string GetGroupCreationDate(HtmlNode doc) => doc.SelectSingleNode("//div[@class='groupstat']/div[@class='data']").InnerText;
 }

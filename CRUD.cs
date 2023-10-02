@@ -121,6 +121,8 @@ internal class CRUD
             connection.Open();
             MySqlDataReader reader = command.ExecuteReader();
             Group group = new();
+            // q: Which opportunities do i have besides while (reader.Read())?
+            
             while (reader.Read())
             {
                 foreach (PropertyInfo property in group.GetType().GetProperties())

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "frI2NqHYHuec3JlJEZF8c6j/IpqxuwnPFzm1kVNBzSk+PjIvZG3i9AuJX6voHmYnA+xcMTlWxxSgE3O+ffEC5A==",
+  "dgSpecHash": "yEiqL0u+adZ4QaOMZ4aawit1h7RnlUrK11KEQERqYVWRxXqxV/Ivd8GWT8hc+kzTHZpFSjbkkf3iWBNW3lRbGw==",
   "success": true,
   "projectFilePath": "E:\\Github\\cs-steamscraping\\cs-steamscraping.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\snr7\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
+    "C:\\Users\\snr7\\.nuget\\packages\\htmlagilitypack\\1.11.53\\htmlagilitypack.1.11.53.nupkg.sha512",
     "C:\\Users\\snr7\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",
     "C:\\Users\\snr7\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.5\\k4os.compression.lz4.streams.1.3.5.nupkg.sha512",
     "C:\\Users\\snr7\\.nuget\\packages\\k4os.hash.xxhash\\1.0.8\\k4os.hash.xxhash.1.0.8.nupkg.sha512",
